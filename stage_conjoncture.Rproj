@@ -1,22 +1,3 @@
-Version: 1.0
-
-RestoreWorkspace: Default
-SaveWorkspace: Default
-AlwaysSaveHistory: Default
-
-EnableCodeIndexing: Yes
-UseSpacesForTab: Yes
-NumSpacesForTab: 2
-Encoding: UTF-8
-
-RnwWeave: Sweave
-LaTeX: pdfLaTeX
-
-
-
-###########################################################################################################################
-
-
 ## Emploi salarié en fin de trimestre - Industries manufacturières, industries extractives et autres (A5-BE) - France hors Mayotte
 
 X1 <- read.csv("~/Desktop/Etudes/Stage 1A/donnes/valeur2020_06_03/valeurs_trimestrielles.csv", header=TRUE, sep=";")
@@ -71,3 +52,19 @@ plot(X1$donnee, type="l")
 plot(X2$donnee, type="l")
 plot(X3$donnee, type="l")
 plot(X4$donnee, type="l")
+
+ks.test(X1$donnee, "pnorm", mean(X1$donnee), sd(X1$donnee))
+
+
+## Distribution empirique de la loi de X1$donnee
+
+x <- X1$donnee
+?rep
+n <- 30
+m <- min(x)
+M <- max(x)
+f <- c()
+for (i in 1:(n-1)){
+	f <- append(f,length(x[which(x >= m+i*(M-m)/n & x < m+(i+1)*(M-m)/n)]))
+}
+plot(f, type="l")
