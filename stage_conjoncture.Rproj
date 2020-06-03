@@ -66,3 +66,8 @@ for (i in 1:length(X4)){
 X4 <- X4[4:length(X4[,1]),]
 colnames(X4)[2] <- "donnee"
 
+
+plot(X1$donnee, type="l")
+plot(X2$donnee, type="l")
+plot(X3$donnee, type="l")
+plot(X4$donnee, type="l")
