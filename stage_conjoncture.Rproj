@@ -68,3 +68,5 @@ for (i in 1:(n-1)){
 	f <- append(f,length(x[which(x >= m+i*(M-m)/n & x < m+(i+1)*(M-m)/n)]))
 }
 plot(f, type="l")
+
+
