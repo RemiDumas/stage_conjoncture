@@ -70,3 +70,52 @@ for (i in 1:(n-1)){
 plot(f, type="l")
 
 
+
+
+
+install.packages("stringr", dependencies=TRUE)
+library(stringr)
+install.packages("FactoMineR")
+library(FactoMineR)
+library(missMDA)
+
+
+
+## Emploi salarié en fin de trimestre - Hébergement et restauration (A17-IZ) - Nouvelle-Aquitaine
+
+
+X1 <- read.csv("~/Desktop/Etudes/Stage 1A/donnees/Emplois hébergement et restauration/valeurs_trimestrielles.csv", header=TRUE, sep=";")
+X1 <- as.data.frame(X1)
+for (i in 1:length(X1)){
+	for (j in 1:length(X1[i,]))
+	X1[i,j] <- as.numeric(X1[i,j])
+}
+X1 <- X1[4:length(X1[,1]),]
+colnames(X1)[2] <- "donnee"
+
+## Fréquentation touristique (nuitées, arrivées)
+
+X2 <- read.csv("~/Desktop/Etudes/Stage 1A/donnees/Fréquentation touristique (nuitées, arrivées)/valeurs_mensuelles.csv", header=TRUE, sep=";")
+X2$Libellé <- as.character(X2$Libellé)
+X2 <- X2[which(str_detect(X2$Libellé, "Nouvelle-Aquitaine")),]
+T <- c()
+for (i in 2010:2019){
+	T <- append(T, paste(as.character(i),"-T1"))
+	T <- append(T, paste(as.character(i),"-T2"))
+	T <- append(T, paste(as.character(i),"-T3"))
+	T <- append(T, paste(as.character(i),"-T4"))
+}
+X <- X2[,4:length(X2[1,])]
+X <- as.data.frame(X)
+
+X <- estim_ncpPCA(X)
+L <- seq(1,120,3)
+for (i in 1:40){
+	X[,i] <- X[,L[i]]+X[,L[i]+1]+X[,L[i]+2]
+}
+X <- X[,1:40]
+
+#################################################################################
+
+
+
