@@ -1,0 +1,18 @@
+A17;LIBA17;A5
+AZ;Agriculture;AZ-Agriculture
+C1;Fabrication de denrées alimentaires, de boissons et de produits à base de tabac;BE-Industrie
+C2DE;"Cokéfaction et raffinage ; industries extractives, énergie, eau, gestion des déchets et dépollution";BE-Industrie
+C3;"Fabrication d'équipements électriques, électroniques, informatiques ; fabrication de machines";BE-Industrie
+C4;Fabrication de matériels de transport;BE-Industrie
+C5;Fabrication d'autres produits industriels;BE-Industrie
+FZ;Construction;FZ-Construction
+GZ;"Commerce ; réparation d'automobiles et de motocycles";GU-Tertiaire marchand hors intérim
+HZ;Transports et entreposage;GU-Tertiaire marchand hors intérim
+IZ;Hébergement et restauration;GU-Tertiaire marchand hors intérim
+JZ;Information et communication;GU-Tertiaire marchand hors intérim
+KZ;Activités financières et d'assurance;GU-Tertiaire marchand hors intérim
+LZ;Activités immobilières;GU-Tertiaire marchand hors intérim
+MN0;"Activités scientifiques et techniques ; services administratifs et de soutien ; hors intérim";GU-Tertiaire marchand hors intérim
+MN78;Intérim;7820Z-Intérim
+RU;Autres activités de services;GU-Tertiaire marchand hors intérim
+OQ;Tertiaire non marchand;OQ-Tertiaire non marchand
