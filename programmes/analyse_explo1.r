@@ -1,6 +1,6 @@
 ## Emploi salarié en fin de trimestre - Industries manufacturières, industries extractives et autres (A5-BE) - France hors Mayotte
 
-X1 <- read.csv("./données/Emplois et chômage/emplois_industrie_manufacturière.csv", header=TRUE, sep=";")
+X1 <- read.csv("donnees/Emplois et chômage/emplois_industrie_manufacturière.csv", header=TRUE, sep=";")
 X1 <- as.data.frame(X1)
 for (i in 1:length(X1)){
   for (j in 1:length(X1[i,]))
@@ -165,9 +165,8 @@ T <- sqrt(length(X3)-2)*rho/sqrt(1-rho^2)
 
   # On trouve une p-valeur du test à 10^-4, ON PEUT CONSIDERER LES ECHANTILLONS DECORRELES
 
-
-
-
+install.packages("esquisse")
+library(esquisse)
 
 
 
